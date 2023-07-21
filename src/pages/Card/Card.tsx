@@ -12,7 +12,7 @@ export function Card() {
       />
       <div className="p-3">
         <h1 className="text-bold text-xl mb-3">Delta Sleep</h1>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mb-3">
           <div className="text-[#a3a3a3] leading-5">
             <p>181.093</p>
             <p>ouvintes</p>
