@@ -21,6 +21,8 @@ import {
 } from "@phosphor-icons/react";
 import { Playlist } from "./Playlist/Playlist";
 import Image from "next/image";
+import { Infos } from "./Infos/Infos";
+import { Card } from "./Card/Card";
 const playlists = [
   {
     name: "curtição e paz",
@@ -57,7 +59,7 @@ export default function Home() {
   return (
     <div className="h-screen bg-black text-white flex flex-col">
       <div className="flex flex-1 m-2">
-        <aside className="w-84 flex flex-col gap-5">
+        <aside className="w-84 flex flex-col gap-5 h-full">
           <div className="bg-[#121212] p-5 rounded-lg flex flex-col gap-5">
             <div className="flex items-center gap-5">
               <House size={32} />
@@ -123,9 +125,11 @@ export default function Home() {
         </aside>
 
         <main className="flex-1">main</main>
+
         <aside className="w-64">
-          <div>
-            <h2>testes</h2>
+          <div className="bg-[#121212] p-3 rounded-lg flex flex-col gap-5 h-full">
+            <Infos />
+            <Card />
           </div>
         </aside>
       </div>
@@ -167,7 +171,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2">
               <p>0:00</p>
-              <div className="w-[626px] bg-[#4d4c4d] h-[2px]"></div>
+              <div className="w-[626px] bg-[#4d4c4d] h-[3px] rounded-lg"></div>
               <p>6:34</p>
             </div>
           </div>
@@ -177,7 +181,7 @@ export default function Home() {
             <Queue size={20} weight="fill" />
             <SpeakerHifi size={20} weight="fill" />
             <SpeakerSimpleHigh size={20} weight="fill" />
-            <div className="w-[92px] bg-[#4d4c4d] h-[2px]"></div>
+            <div className="w-[92px] bg-[#fcfcfc] h-[3px] rounded-lg"></div>
           </div>
         </div>
       </footer>
