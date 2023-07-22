@@ -2,6 +2,7 @@ import {
   ArrowRight,
   Books,
   CaretDown,
+  CaretLeft,
   CaretRight,
   CassetteTape,
   Heart,
@@ -18,11 +19,14 @@ import {
   SkipForward,
   SpeakerHifi,
   SpeakerSimpleHigh,
+  UsersThree,
 } from "@phosphor-icons/react";
 import { Playlist } from "./Playlist/Playlist";
 import Image from "next/image";
 import { Infos } from "./Infos/Infos";
 import { Card } from "./Card/Card";
+import { CardMusic } from "./CardMusic/CardMusic";
+import { CardMix } from "./CardMix/CardMix";
 const playlists = [
   {
     name: "curtição e paz",
@@ -55,6 +59,33 @@ const playlists = [
     img: "/marsvolta.png",
   },
 ];
+
+const cardMusic = [
+  {
+    imagem: '/semana.png',
+    artista: 'Descoberta da Semana',
+  },
+  {
+    imagem: '/semana.png',
+    artista: 'Descoberta da Semana',
+  },
+  {
+    imagem: '/semana.png',
+    artista: 'Descoberta da Semana',
+  },
+  {
+    imagem: '/semana.png',
+    artista: 'Descoberta da Semana',
+  },
+  {
+    imagem: '/semana.png',
+    artista: 'Descoberta da Semana',
+  },
+  {
+    imagem: '/semana.png',
+    artista: 'Descoberta da Semana',
+  },
+]
 export default function Home() {
   return (
     <div className="h-screen bg-black text-white flex flex-col">
@@ -124,7 +155,42 @@ export default function Home() {
           </div>
         </aside>
 
-        <main className="flex-1">main</main>
+        <main className="flex-1 bg-[#121212] p-5 rounded-lg flex flex-col mx-2">
+            <header className="flex justify-between mb-5">
+              <div className="flex gap-3">
+                <div className="flex justify-center items-center w-8 h-8 bg-[#000000] rounded-full">
+                  <CaretLeft size={20} />
+                </div>
+                <div className="flex justify-center items-center w-8 h-8 bg-[#000000] rounded-full">
+                  <CaretRight size={20} />
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="flex justify-center items-center w-8 h-8 bg-[#000000] rounded-full">
+                  <UsersThree size={20} />
+                </div>
+                <div className="flex justify-center items-center p-1 w-8 h-8 bg-[#000000] rounded-full">
+                  <Image src={'/profile.jpg'} alt="" width={100} height={100} className="rounded-full" />
+                </div>
+              </div>
+            </header>
+            <section className="mb-7">
+              <h1 className="text-3xl font-bold mb-5">Boa noite</h1>
+              <div className="flex flex-wrap gap-5">
+                {cardMusic.map((card, index) => {
+                  return <CardMusic key={index} imagem={card.imagem} artista={card.artista} />
+                })}
+              </div>
+            </section>
+            <section>
+              <h1 className="text-2xl font-bold mb-5">Seus mixes mais ouvidos</h1>
+              <div className="flex gap-5">
+                {[1, 2, 3, 4, 5, 6].map((_card, index) => {
+                  return <CardMix key={index} />
+                })}
+              </div>
+            </section>
+        </main>
 
         <aside className="w-64">
           <div className="bg-[#121212] p-3 rounded-lg flex flex-col gap-5 h-full">

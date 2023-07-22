@@ -1,11 +1,6 @@
 import { Heart, X } from "@phosphor-icons/react";
 import Image from "next/image";
 
-const imageStyle = {
-  width: "100%",
-  height: "100%",
-};
-
 export function Infos() {
   return (
     <div className="">
